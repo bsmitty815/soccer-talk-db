@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :discussions
-  resources :profiles
+  resources :comments, only: [:create, :destroy]
+  resources :discussions, only: [:create, :destroy]
+  resources :profiles, only: [:update]
   resources :users, only: [:update, :destroy]
 
 
