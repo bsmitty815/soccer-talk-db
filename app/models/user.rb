@@ -1,7 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
 
-    has_many :discussions
-    has_many :comments
-    has_one :profile
+    #do i want to destroy the comments and discussions?
+    has_many :discussions, dependent: :destroy
+    has_many :comments, dependent: :destroy
+    has_one :profile, dependent: :destroy
 end
