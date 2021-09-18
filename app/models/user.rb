@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
     #create the profile when a user is created
     after_create do
-        create_profile(:user_id => self.id, :bio => "", team => "")
+        create_profile(:user_id => self.id, :bio => "", :team => "Manchester United")
     end
 
 

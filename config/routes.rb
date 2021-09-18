@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
   #GET login
-  get '/login', to: 'sessions#create'
+  post '/login', to: 'sessions#create'
   #DELETE logout
   delete '/logout', to: 'sessions#destroy'
   #GET auto login
