@@ -2,7 +2,7 @@ class Profile < ApplicationRecord
   belongs_to :user
   
 
-  validates :bio, length: { maximum: 500 }
+  validates :bio, length: { maximum: 200 }, presence: true
 
   #add another validation showing only certains names for team
   validates :team, acceptance: { accept: ['Arsenal', 'Aston Villa', 'Brentford', 'Brighton and Hove Albion', 'Burnley',

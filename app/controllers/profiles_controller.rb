@@ -5,9 +5,9 @@ class ProfilesController < ApplicationController
         user = User.find_by(id: session[:user_id])
         profile = user.profile
         #byebug
-        if profile
-            profile.update(profile_params)
-            render json: profile, status: 200
+        if profile #update!(profile_params)
+            profile.update!(profile_params)
+            render json: user, status: 200
         elsif !user
             render json: { errors: user.errors.full_messages }, status: :unauthorized
         else
