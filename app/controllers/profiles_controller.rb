@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
     def update
         user = User.find_by(id: session[:user_id])
         profile = user.profile
+        #byebug
         if profile
             profile.update(profile_params)
             render json: profile, status: 200
