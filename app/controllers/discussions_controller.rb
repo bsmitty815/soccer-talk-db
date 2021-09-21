@@ -1,6 +1,7 @@
 class DiscussionsController < ApplicationController
 
     def index
+        #byebug
         discussions = Discussion.all
         render json: discussions
     end
@@ -20,6 +21,7 @@ class DiscussionsController < ApplicationController
     end
 
     def destroy
+        #byebug
         discussion = Discussion.find_by(id: params[:id])
         discussion.destroy
     end
