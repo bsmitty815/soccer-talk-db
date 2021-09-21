@@ -5,6 +5,8 @@ class DiscussionsController < ApplicationController
         render json: discussions
     end
 
+
+
     def create
         discussion = Discussion.new(discussion_params)
         user = User.find_by(id: session[:user_id])
