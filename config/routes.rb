@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy]
-  resources :discussions, only: [:create, :destroy]
+  resources :discussions, only: [:index, :create, :destroy]
   resources :profiles, only: [:update]
   resources :users, only: [:update, :destroy]
 

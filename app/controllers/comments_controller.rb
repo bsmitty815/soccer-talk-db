@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     def create
         comment = Comments.create(comment_params)
         user = Users.find_by(id: session[:user_id])
-        comment.user_id = user.id
+        comment.user = user
         if comment
             render json: comment, status: :created
         else

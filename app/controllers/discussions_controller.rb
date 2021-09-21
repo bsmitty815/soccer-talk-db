@@ -1,10 +1,16 @@
 class DiscussionsController < ApplicationController
 
+    def index
+        discussions = Discussion.all
+        render json: discussions
+    end
+
     def create
-        discussion = Discussions.create(discussion_params)
+        discussion = Discussion.new(discussion_params)
         user = User.find_by(id: session[:user_id])
-        discussion.user_id = user.id
-        if disuccion
+        discussion.user = user
+        if discussion.save
+            #byebug
             render json: discussion, status: :created
         else
             render json: { errors: discussion.error.full_messages}, status: 422
@@ -12,8 +18,8 @@ class DiscussionsController < ApplicationController
     end
 
     def destroy
-        discussion = Discussions.find_by(id: params[:id])
-        disuccion.destroy
+        discussion = Discussion.find_by(id: params[:id])
+        discussion.destroy
     end
 
 
