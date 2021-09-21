@@ -22,8 +22,9 @@ class UsersController < ApplicationController
         user = User.find_by(id: session[:user_id])
         old_password = params[:oldPass][:oldPassword]
         if user&.authenticate(old_password)
-            if user&.authenticate(password_params)
-                render json: { message: "Password updated" }, status: 200
+            
+            if user.update(password_params)
+                render json: user, status: 200
             else
                 render json: { message: "New passwords do not match" }, status: 422
             end
