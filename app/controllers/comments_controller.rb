@@ -1,19 +1,25 @@
 class CommentsController < ApplicationController
 
     def create
-        comment = Comments.create(comment_params)
-        user = Users.find_by(id: session[:user_id])
+        comment = Comment.new(comment_params)
+        user = User.find_by(id: session[:user_id])
+        
         comment.user = user
-        if comment
-            render json: comment, status: :created
+        
+        if comment.save
+            discussion = Discussion.find_by(id: comment.discussion_id)
+            #byebug
+            render json: discussion, status: :created
         else
             render json: { errors: comment.error.full_messages }, status: 422
         end
     end
 
     def destroy
-        comment = Comments.find_by(id: params[:id])
+        comment = Comment.find_by(id: params[:id])
         comment.destroy
+        discussion = Discussion.find_by(id: comment.discussion_id)
+        render json: discussion, status: 200
     end
 
     private
@@ -21,4 +27,5 @@ class CommentsController < ApplicationController
     def comment_params
         params.permit(:discussion_id, :body)
     end
+
 end
