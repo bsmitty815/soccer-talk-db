@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :comments, only: [:create]
-  resources :discussions, only: [:index, :create, :destroy]
+  resources :discussions, only: [:index, :create]
   resources :profiles, only: [:update]
   resources :users, only: [:update, :destroy]
 
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   #DELETE comment
   delete '/discussions/comments/:id', to: 'comments#destroy'
+  #DELETE discussions
+  delete 'discussions/discussions/:id', to: 'discussions#destroy'
 
   #GET soccer videos api
   get '/videohighlights', to: 'soccer_video_apis#get_soccer_videos#get_soccer_videos'
