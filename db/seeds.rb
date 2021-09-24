@@ -266,47 +266,87 @@ q.user = userO
 q.discussion = discussionM
 q.save
 #discussion b
-r = Comment.new(user_id: userO, discussion_id: discussionB, body: "George Best")
+r = Comment.new(user_id: "", discussion_id: "", body: "George Best")
+r.user = userO
+r.discussion = discussionB
 r.save
-s = Comment.new(user_id: userP, discussion_id: discussionB, body: "Ronaldo")
+s = Comment.new(user_id: "", discussion_id: "", body: "Ronaldo")\
+s.user = userP
+s.discussion = discussionB
 s.save
-t = Comment.new(user_id: userE, discussion_id: discussionB, body: "Messi")
+t = Comment.new(user_id: "", discussion_id: "", body: "Messi")
+t.user = userE
+t.discussion = discussionB
 t.save
-u = Comment.new(user_id: userF, discussion_id: discussionB, body: "Wayne Rooney")
+u = Comment.new(user_id: "", discussion_id: "", body: "Wayne Rooney")
+u.user = userF
+u.discussion = discussionB
 u.save
-v = Comment.new(user_id: userH, discussion_id: discussionB, body: "Paul Scholes")
+v = Comment.new(user_id: "", discussion_id: "", body: "Paul Scholes")
+v.user = userH
+v.discussion = discussionB
 v.save
-w = Comment.new(user_id: userB, discussion_id: discussionB, body: "Ryan Giggs")
+w = Comment.new(user_id: "", discussion_id: "", body: "Ryan Giggs")
+w.user = userB
+w.discussion = discussionB
 w.save
-x = Comment.new(user_id: userD, discussion_id: discussionB, body: "Frank Lampard")
+x = Comment.new(user_id: "", discussion_id: "", body: "Frank Lampard")
+x.user = userD
+x.discussion = discussionB
 x.save
-y = Comment.new(user_id: userN, discussion_id: discussionB, body: "Cristiano Ronaldo")
+y = Comment.new(user_id: "", discussion_id: "", body: "Cristiano Ronaldo")
+y.user = userN
+y.discussion = discussionB
 y.save
 #discussion p
-z = Comment.new(user_id: userN, discussion_id: discussionH, body: "Sancho for sure")
+z = Comment.new(user_id: "", discussion_id: "", body: "Sancho for sure")
+z.user = userN
+z.discussion = discussionH
 z.save
-aa = Comment.new(user_id: userF, discussion_id: discussionH, body: "It's tough to say. Sancho hasn't done much yet.")
+aa = Comment.new(user_id: "", discussion_id: "", body: "It's tough to say. Sancho hasn't done much yet.")
+aa.user = userF
+aa.discussion = discussionH
 aa.save
-bb = Comment.new(user_id: userB, discussion_id: discussionH, body: "Sancho is still settling in but once he does he will be a point machine")
+bb = Comment.new(user_id: "", discussion_id: "", body: "Sancho is still settling in but once he does he will be a point machine")
+bb.user = userB
+bb.discussion = discussionH
 bb.save
-cc = Comment.new(user_id: userL, discussion_id: discussionH, body: "I think Zyech will.")
+cc = Comment.new(user_id: "", discussion_id: "", body: "I think Zyech will.")
+cc.user = userL
+cc.discussion = discussionH
 cc.save
-dd = Comment.new(user_id: userN, discussion_id: discussionH, body: "It's going to be close")
+dd = Comment.new(user_id: "", discussion_id: "", body: "It's going to be close")
+dd.user = userN
+dd.discussion = discussionH
 dd.save
-ee = Comment.new(user_id: userM, discussion_id: discussionH, body: "Sancho had a great season last year so I'm going with Sancho.")
+ee = Comment.new(user_id: "", discussion_id: "", body: "Sancho had a great season last year so I'm going with Sancho.")
+ee.user = userM
+ee.discussion = discussionH
 ee.save
 #discussion c
-ff = Comment.new(user_id: userN, discussion_id: discussionC, body: "Glad to see him back in the squad.")
+ff = Comment.new(user_id:"", discussion_id: "" body: "Glad to see him back in the squad.")
+ff.user = userN
+ff.discussion = discussionC
 ff.save
-gg = Comment.new(user_id: userF, discussion_id: discussionC, body: "Manchester United offense are looking good so far.")
+gg = Comment.new(user_id: "", discussion_id: "" body: "Manchester United offense are looking good so far.")
+gg.user = userF
+gg.discussion = discussionC
 gg.save
-hh = Comment.new(user_id: userI, discussion_id: discussionC, body: "Rashford, Ronaldo, and Greenwood will be unstoppable.")
+hh = Comment.new(user_id: "", discussion_id: "" body: "Rashford, Ronaldo, and Greenwood will be unstoppable.")
+hh.user = userI
+hh.discussion = discussionC
 hh.save
-ii = Comment.new(user_id: userP, discussion_id: discussionC, body: "I have him on my fantasy team. He's going to be putting up massive points")
+ii = Comment.new(user_id: "", discussion_id: "" body: "I have him on my fantasy team. He's going to be putting up massive points")
+ii.user = userP
+ii.discussion = discussionC
 ii.save
-jj = Comment.new(user_id: userL, discussion_id: discussionC, body: "Yesssss!!!!!")
+jj = Comment.new(user_id: "", discussion_id: "" body: "Yesssss!!!!!")
+jj.user = userL
+jj.discussion = discussionC
 jj.save
-kk = Comment.new(user_id: userG, discussion_id: discussionC, body: "Can't wait to see him back in the sqaud.")
+kk = Comment.new(user_id: "", discussion_id: "" body: "Can't wait to see him back in the sqaud.")
+kk.user = userG
+kk.discussion = discussionC
 kk.save
 #discussion e
 ll=  Comment.new(user_id: userN, discussion_id: discussionE, body: "Pep has been pretty consistent and has won a lot of trophies with Manchester City")
