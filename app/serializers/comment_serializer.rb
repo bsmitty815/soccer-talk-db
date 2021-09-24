@@ -3,4 +3,8 @@ class CommentSerializer < ActiveModel::Serializer
 
   belongs_to :discussion
   belongs_to :user
+
+  def created_at
+    object.created_at.strftime("%Y-%m-%d")
+  end
 end

@@ -1,10 +1,10 @@
 class DiscussionSerializer < ActiveModel::Serializer
-  attributes :id, :title, :body, :created_at, :updated_at, :summary
+  attributes :id, :title, :body, :created_at, :summary
   
   belongs_to :user
   has_many :comments, dependent: :destroy
 
-  def updated_at
+  def created_at
     object.created_at.strftime("%Y-%m-%d")
   end
 
