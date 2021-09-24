@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :discussions
   has_one :profile
+  has_many :comments
 end

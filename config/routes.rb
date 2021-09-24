@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete '/discussions/comments/:id', to: 'comments#destroy'
 
   #GET soccer videos api
-  get '/videohighlights', to: 'soccer_video_apis#get_soccer_videos'
+  get '/videohighlights', to: 'soccer_video_apis#get_soccer_videos#get_soccer_videos'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
