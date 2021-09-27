@@ -3,7 +3,12 @@ class DiscussionsController < ApplicationController
     skip_before_action :authorize, only: [:index]
 
     def index
-        discussions = Discussion.all
+        #discussions = Discussion.all
+        #page_number = (discussion_page_params).to_i
+        page_number = params[:q].to_i
+        #byebug
+        discussions = Discussion.order('id DESC').limit(5).offset(page_number*5)
+        #byebug
         render json: discussions
     end
 
@@ -37,4 +42,6 @@ class DiscussionsController < ApplicationController
     def discussion_params
         params.permit(:title, :body)
     end
+
+
 end
