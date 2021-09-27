@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
         
         if comment.save
             discussion = Discussion.find_by(id: comment.discussion_id)
-            #byebug
             render json: discussion, status: :created
         else
             render json: { errors: comment.error.full_messages }, status: 422

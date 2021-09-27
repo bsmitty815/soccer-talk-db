@@ -3,7 +3,6 @@ class DiscussionsController < ApplicationController
     skip_before_action :authorize, only: [:index]
 
     def index
-        #byebug
         discussions = Discussion.all
         render json: discussions
     end
@@ -15,7 +14,6 @@ class DiscussionsController < ApplicationController
         user = User.find_by(id: session[:user_id])
         discussion.user = user
         if discussion.save
-            #byebug
             render json: discussion, status: :created
         else
             render json: { errors: discussion.error.full_messages}, status: 422
@@ -23,7 +21,6 @@ class DiscussionsController < ApplicationController
     end
 
     def destroy
-        #byebug
         discussion = Discussion.find_by(id: params[:id])
         user = User.find_by(id: session[:user_id])
         if discussion.user_id == user.id
