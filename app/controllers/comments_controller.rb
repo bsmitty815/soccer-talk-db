@@ -17,9 +17,15 @@ class CommentsController < ApplicationController
 
     def destroy
         comment = Comment.find_by(id: params[:id])
-        comment.destroy
-        discussion = Discussion.find_by(id: comment.discussion_id)
-        render json: discussion, status: 200
+        user = User.find_by(id: session[:user_id])
+        if comment.user_id == user.id
+            comment.destroy
+            discussion = Discussion.find_by(id: comment.discussion_id)
+            render json: discussion, status: 200
+        else
+            render json: { error: "Unauthorized"}, status: :unprocessable_entity
+        end
+
     end
 
     private

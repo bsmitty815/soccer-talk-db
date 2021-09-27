@@ -25,7 +25,13 @@ class DiscussionsController < ApplicationController
     def destroy
         #byebug
         discussion = Discussion.find_by(id: params[:id])
-        discussion.destroy
+        user = User.find_by(id: session[:user_id])
+        if discussion.user_id == user.id
+            discussion.destroy
+        else
+            render json: { error: "Unauthorized"}, status: :unprocessable_entity
+        end
+        
     end
 
 
