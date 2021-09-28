@@ -19,8 +19,11 @@ Rails.application.routes.draw do
   delete 'discussions/discussions/:id', to: 'discussions#destroy'
 
   #GET soccer videos api
-  get '/videohighlights', to: 'soccer_video_apis#get_soccer_videos#get_soccer_videos'
+  get '/videohighlights', to: 'soccer_video_apis#get_soccer_videos'
+  # get '/videohighlights', to: 'soccer_video_apis#get_soccer_videos#get_soccer_videos'
 
+  #GET football data api
+  get 'footballtable', to: 'football_data_api#get_football_table'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

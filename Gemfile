@@ -32,3 +32,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rest-client"
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+
+#dotenv-rails gem so you can hide an api in an .env file
+gem 'dotenv-rails'
