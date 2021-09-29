@@ -1,8 +1,11 @@
+
+require 'rest-client'
+
 class SoccerVideoApisController < ApplicationController
 
     skip_before_action :authorize, only: [:get_soccer_videos]
 
-    require 'rest-client'
+    
 
     def get_soccer_videos
         
