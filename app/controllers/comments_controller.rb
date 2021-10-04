@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
             discussion = Discussion.find_by(id: comment.discussion_id)
             render json: discussion, status: :created
         else
-            render json: { errors: comment.error.full_messages }, status: 422
+            render json: { errors: comment.errors.full_messages }, status: 422
         end
     end
 
