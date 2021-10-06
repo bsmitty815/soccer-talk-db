@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+    
     def create
         comment = Comment.new(comment_params)
         user = User.find_by(id: session[:user_id])

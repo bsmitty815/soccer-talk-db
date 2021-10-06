@@ -1,6 +1,6 @@
 class DiscussionsController < ApplicationController
 
-    
+    skip_before_action :authorize, only: [:index, :show]
 
     #GET discussions
     def index
